@@ -252,6 +252,7 @@ export interface LovelaceBadgeConfig {
 export interface FrontendTranslationData {
     language: string;
     number_format: NumberFormat;
+    time_format: TimeFormat;
 }
 export interface ActionHandlerDetail {
     action: string;

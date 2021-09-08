@@ -314,6 +314,7 @@ export interface LovelaceBadgeConfig {
 export interface FrontendTranslationData {
   language: string;
   number_format: NumberFormat;
+  time_format: TimeFormat;
 }
 
 export interface ActionHandlerDetail {
@@ -330,13 +331,13 @@ export interface ActionHandlerOptions {
 export interface EntitiesCardEntityConfig extends EntityConfig {
   type?: string;
   secondary_info?:
-    | "entity-id"
-    | "last-changed"
-    | "last-triggered"
-    | "last-updated"
-    | "position"
-    | "tilt-position"
-    | "brightness";
+  | "entity-id"
+  | "last-changed"
+  | "last-triggered"
+  | "last-updated"
+  | "position"
+  | "tilt-position"
+  | "brightness";
   action_name?: string;
   service?: string;
   service_data?: Record<string, unknown>;
