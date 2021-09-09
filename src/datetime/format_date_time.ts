@@ -11,7 +11,7 @@ function toLocaleStringSupportsOptions() {
   return false;
 }
 
-export const formatDateTime = (toLocaleStringSupportsOptions()
+export const formatDateTime = toLocaleStringSupportsOptions()
   ? (dateObj: Date, locales: FrontendTranslationData) =>
     dateObj.toLocaleString(locales.language, {
       year: "numeric",
@@ -20,4 +20,4 @@ export const formatDateTime = (toLocaleStringSupportsOptions()
       hour: "numeric",
       minute: "2-digit",
     })
-  : (dateObj: Date) => fecha.format(dateObj, "haDateTime"));
+  : (dateObj: Date) => fecha.format(dateObj, "haDateTime");

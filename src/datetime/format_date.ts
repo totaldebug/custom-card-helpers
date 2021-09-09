@@ -11,11 +11,11 @@ function toLocaleDateStringSupportsOptions() {
   return false;
 }
 
-export const formatDate = (toLocaleDateStringSupportsOptions()
+export const formatDate = toLocaleDateStringSupportsOptions()
   ? (dateObj: Date, locales: FrontendTranslationData) =>
     dateObj.toLocaleDateString(locales.language, {
       year: "numeric",
       month: "long",
       day: "numeric",
     })
-  : (dateObj: Date) => fecha.format(dateObj, "mediumDate"));
+  : (dateObj: Date) => fecha.format(dateObj, "mediumDate");
