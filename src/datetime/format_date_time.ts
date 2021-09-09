@@ -1,4 +1,4 @@
-import fecha from "fecha";
+import dayjs from "dayjs";
 import { FrontendTranslationData } from "../types";
 
 // Check for support of native locale string options
@@ -20,4 +20,4 @@ export const formatDateTime = (toLocaleStringSupportsOptions()
         hour: "numeric",
         minute: "2-digit",
       })
-  : (dateObj: Date) => fecha.format(dateObj, "haDateTime"));
+  : (dateObj: Date) => dayjs(dateObj).format("haDateTime"));
