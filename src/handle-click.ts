@@ -29,7 +29,7 @@ export const handleClick = (
 
   if (!actionConfig) {
     actionConfig = {
-      action: "more-info"
+      action: "more-info",
     };
   }
 
@@ -37,13 +37,13 @@ export const handleClick = (
     actionConfig.confirmation &&
     (!actionConfig.confirmation.exemptions ||
       !actionConfig.confirmation.exemptions.some(
-        e => e.user === hass!.user!.id
+        (e) => e.user === hass!.user!.id
       ))
   ) {
     if (
       !confirm(
         actionConfig.confirmation.text ||
-          `Are you sure you want to ${actionConfig.action}?`
+        `Are you sure you want to ${actionConfig.action}?`
       )
     ) {
       return;
@@ -57,8 +57,8 @@ export const handleClick = (
           entityId: actionConfig.entity
             ? actionConfig.entity
             : config.entity
-            ? config.entity
-            : config.camera_image
+              ? config.entity
+              : config.camera_image
         });
         if (actionConfig.haptic) forwardHaptic(actionConfig.haptic);
       }
