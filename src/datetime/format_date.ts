@@ -1,4 +1,4 @@
-import dayjs from "dayjs";
+import fecha from "fecha";
 import { FrontendTranslationData } from "../types";
 
 // Check for support of native locale string options
@@ -18,4 +18,4 @@ export const formatDate = (toLocaleDateStringSupportsOptions()
       month: "long",
       day: "numeric",
     })
-  : (dateObj: Date) => dayjs(dateObj).format("ll"));
+  : (dateObj: Date) => fecha.format(dateObj, "mediumDate"));

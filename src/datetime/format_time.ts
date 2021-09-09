@@ -1,4 +1,4 @@
-import dayjs from "dayjs";
+import fecha from "fecha";
 import { FrontendTranslationData } from "../types";
 
 // Check for support of native locale string options
@@ -17,4 +17,4 @@ export const formatTime = (toLocaleTimeStringSupportsOptions()
       hour: "numeric",
       minute: "2-digit",
     })
-  : (dateObj: Date) => dayjs(dateObj).format("HH:mm"));
+  : (dateObj: Date) => fecha.format(dateObj, "shortTime"));
